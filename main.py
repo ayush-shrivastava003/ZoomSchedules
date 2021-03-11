@@ -17,7 +17,15 @@ days = {'monday' : MondayLinks, 'tuesday' : TuesdayLinks, 'wednesday' : Wednesda
 
 def open_url(url):
     webbrowser.open_new_tab(url)
-    print(f'{time.asctime()}: Opened a new tab.')\
+    print(f'{time.asctime()}: Opened a new tab.')
+
+def make_schedule():
+    for Classes in range(data[0]["number of classes"]):
+        schedule.every().monday.at(days['monday'][Classes][1]).do(open_url, url = days['monday'][Classes][0])
+        schedule.every().monday.at(days['tuesday'][Classes][1]).do(open_url, url = days['tuesday'][Classes][0])
+        schedule.every().wednesday.at(days['wednesday'][Classes][1]).do(open_url, url = days['wednesday'][Classes][0])
+        schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
+        schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
 
 os = input('Which operating system are you using (MacOS or Windows)?:')
 name = input('What is the name that you use for your school email (ex. ashrivastava2)?: ')
@@ -42,16 +50,15 @@ if not char:
 
         #create schedule
         try:
-            number_of_classes = int(input('Enter the number of classes you take per day: '))
-            NumberOfClasses = number_of_classes
-            print(f'You take {number_of_classes} classes.')
+            NumberOfClasses = int(input('Enter the number of classes you take per day: '))
+            print(f'You take {NumberOfClasses} classes.')
 
             #iterates through the days of the week
             for day in days:
                 #inputs to determine class time + link
-                for Class in range(number_of_classes):
-                    class_link = input(f'Enter the link for class {Class+1} of {number_of_classes} on {day} (ex https://www.zoom.us/j/738912): ')
-                    class_time = input(f'Enter the time for class {Class+1} of {number_of_classes} on {day} (ex. 08:25 or 22:45): ')
+                for Class in range(NumberOfClasses):
+                    class_link = input(f'Enter the link for class {Class+1} of {NumberOfClasses} on {day} (ex https://www.zoom.us/j/738912): ')
+                    class_time = input(f'Enter the time for class {Class+1} of {NumberOfClasses} on {day} (ex. 08:25 or 22:45): ')
 
                     #if class time was not formatted correctly
                     if len(class_time) < 5:
@@ -60,12 +67,7 @@ if not char:
                     days[day].append((class_link, class_time))
 
             #actually starts to schedule everything
-            for Classes in range(number_of_classes):
-                schedule.every().monday.at(days['monday'][Classes][1]).do(open_url, url = days['monday'][Classes][0])
-                schedule.every().monday.at(days['tuesday'][Classes][1]).do(open_url, url = days['tuesday'][Classes][0])
-                schedule.every().wednesday.at(days['wednesday'][Classes][1]).do(open_url, url = days['wednesday'][Classes][0])
-                schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
-                schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
+            make_schedule()
 
             #breaks out of the loop
             no_classes = False
@@ -97,12 +99,7 @@ else:
     days = data[0]["schedule"]
 
     #schedules again
-    for Classes in range(data[0]["number of classes"]):
-        schedule.every().monday.at(days['monday'][Classes][1]).do(open_url, url = days['monday'][Classes][0])
-        schedule.every().monday.at(days['tuesday'][Classes][1]).do(open_url, url = days['tuesday'][Classes][0])
-        schedule.every().wednesday.at(days['wednesday'][Classes][1]).do(open_url, url = days['wednesday'][Classes][0])
-        schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
-        schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
+    make_schedule()
 
     print('Scheduled all classes. Waiting...')
 
