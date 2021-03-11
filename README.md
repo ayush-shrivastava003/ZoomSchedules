@@ -1,3 +1,5 @@
+# ZoomSchedules
+
 ok so if you don't have a schedule it will help you make one (or you can just edit the json file manually idc)
 if you close the program you won't have to remake the schedule cause it'll look at the json file
 you should leave this running in the background during the day
