@@ -1,5 +1,6 @@
 import webbrowser
 import json
+import os
 import time
 import platform
 import moduleinstaller
@@ -32,13 +33,12 @@ def make_schedule():
         schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
         schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
 
-if platform.system() == 'Darwin':
-    path = './SavedSchedule.json'
+path = os.path.normpath(os.getcwd() + os.sep + os.pardir + os.sep + 'SavedSchedule.json')
 
-else:
-    path = 'SavedSchedule.json'
-
-savedschedule = open(path, 'r')
+try:
+    savedschedule = open(path, 'r')
+except FileNotFoundError:
+    savedschedule = open(path, 'w+')
 char = savedschedule.read(1)
 savedschedule.close()
 
