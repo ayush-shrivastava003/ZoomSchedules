@@ -3,7 +3,9 @@ import json
 import os
 import time
 import platform
+
 import moduleinstaller
+from window import Window
 
 try:
     import schedule
@@ -18,6 +20,8 @@ TuesdayLinks = []
 WednesdayLinks = []
 ThursdayLinks = []
 FridayLinks = []
+
+window = Window()
 
 days = {'monday' : MondayLinks, 'tuesday' : TuesdayLinks, 'wednesday' : WednesdayLinks, 'thursday' : ThursdayLinks, 'friday' : FridayLinks}
 
