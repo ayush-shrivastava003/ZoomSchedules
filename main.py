@@ -2,9 +2,10 @@ import schedule
 import webbrowser
 import json
 import time
+import platform
+
 
 no_classes = True
-
 NumberOfClasses = None
 path = None
 MondayLinks = []
@@ -27,19 +28,15 @@ def make_schedule():
         schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
         schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
 
-os = input('Which operating system are you using (MacOS or Windows)?:')
-name = input('What is the name that you use for your school email (ex. ashrivastava2)?: ')
+if platform.system() == 'Darwin':
+    path = './SavedSchedule.json'
 
-if 'Mac' in os:
-    print('You are using MacOS.')
-    path = f'/Users/{name}/Downloads/ZoomSchedules/SavedSchedule.json'
-
-elif 'Windows' in os:
-    print('You are using Windows OS.')
+else:
     path = 'SavedSchedule.json'
 
 savedschedule = open(path, 'r')
 char = savedschedule.read(1)
+savedschedule.close()
 
 #no previous schedule
 if not char:
@@ -84,19 +81,22 @@ if not char:
     with open(path, 'w') as openedfile:
         info = {'schedule' : days, 'number of classes' : NumberOfClasses}
         json.dump(info, openedfile)
+        openedfile.close()
 
 #schedule found in json file
 else:
     print('You already have a schedule.')
 
     #copies previous schedule to dictionary
-    savedschedule = open(path, 'r')
-    data = []
-    for line in savedschedule:
-        data.append(json.loads(line))
+    with open(path, 'r') as savedschedule:
+        data = []
+        for line in savedschedule:
+            data.append(json.loads(line))
 
-    NumberOfClasses = data[0]["number of classes"]
-    days = data[0]["schedule"]
+        NumberOfClasses = data[0]["number of classes"]
+        days = data[0]["schedule"]
+        
+        savedschedule.close()
 
     #schedules again
     make_schedule()
