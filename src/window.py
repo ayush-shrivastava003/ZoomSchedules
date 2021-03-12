@@ -14,7 +14,6 @@ class Window():
         title.pack(padx = 0, pady = 15)
 
         grid = tk.Grid()
-        
 
         root.mainloop()
 
