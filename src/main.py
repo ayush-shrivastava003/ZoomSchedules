@@ -3,9 +3,9 @@ import json
 import os
 import time
 
-import util.moduleinstaller
+import moduleinstaller
 
-from ui.window import Window
+from window import Window
 
 try:
     import schedule

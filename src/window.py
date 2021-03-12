@@ -1,5 +1,7 @@
 import tkinter as tk
 
+import main
+
 class Window():
     def __init__(self):
         self.bgcol = '#333333'
@@ -18,3 +20,7 @@ class Window():
         root.mainloop()
 
     #def entries(self):
+
+class Table():
+    def __init__(self):
+        
