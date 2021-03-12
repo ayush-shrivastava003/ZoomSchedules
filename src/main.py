@@ -36,12 +36,15 @@ def make_schedule():
         schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
         schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
 
-path = os.path.normpath(__file__ + os.sep + os.pardir + os.sep + os.pardir + os.sep + 'res' + os.sep + 'config.json')
+path = os.path.normpath(__file__ + os.sep + os.pardir + os.sep + os.pardir + os.sep + 'res')
+os.makedirs(path, exist_ok=True)
+
+file = path + os.sep + 'config.json'
 
 try:
-    savedschedule = open(path, 'r')
+    savedschedule = open(file, 'r')
 except FileNotFoundError:
-    savedschedule = open(path, 'w+')
+    savedschedule = open(file, 'w+')
 char = savedschedule.read(1)
 savedschedule.close()
 
