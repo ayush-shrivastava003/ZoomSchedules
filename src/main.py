@@ -20,7 +20,7 @@ WednesdayLinks = []
 ThursdayLinks = []
 FridayLinks = []
 
-window = Window()
+# window = Window()
 
 days = {'monday' : MondayLinks, 'tuesday' : TuesdayLinks, 'wednesday' : WednesdayLinks, 'thursday' : ThursdayLinks, 'friday' : FridayLinks}
 
