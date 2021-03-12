@@ -36,7 +36,7 @@ def make_schedule():
         schedule.every().thursday.at(days['thursday'][Classes][1]).do(open_url, url = days['thursday'][Classes][0])
         schedule.every().friday.at(days['friday'][Classes][1]).do(open_url, url = days['friday'][Classes][0])
 
-path = os.path.normpath(os.getcwd() + os.sep + os.pardir + os.sep + 'SavedSchedule.json')
+path = os.path.normpath(__file__ + os.sep + os.pardir + os.sep + os.pardir + os.sep + 'res' + os.sep + 'config.json')
 
 try:
     savedschedule = open(path, 'r')
