@@ -2,8 +2,10 @@ import webbrowser
 import json
 import os
 import time
-import moduleinstaller
-from window import Window
+
+import util.moduleinstaller
+
+from ui.window import Window
 
 try:
     import schedule
