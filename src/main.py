@@ -2,7 +2,6 @@ import webbrowser
 import json
 import os
 import time
-import platform
 import moduleinstaller
 from window import Window
 
