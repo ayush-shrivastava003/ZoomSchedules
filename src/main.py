@@ -7,8 +7,9 @@ from window import Window
 
 try:
     import schedule
+    import selenium
 except ImportError:
-    moduleinstaller.install_modules('schedule')
+    moduleinstaller.install_modules(['schedule', 'selenium'])
 
 no_classes = True
 NumberOfClasses = None
