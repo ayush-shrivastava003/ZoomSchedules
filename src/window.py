@@ -17,3 +17,5 @@ class Window():
         
 
         root.mainloop()
+
+    #def entries(self):
