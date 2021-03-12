@@ -20,11 +20,7 @@ WednesdayLinks = []
 ThursdayLinks = []
 FridayLinks = []
 
-<<<<<<< Updated upstream
-# window = Window()
-=======
 #window = Window()
->>>>>>> Stashed changes
 
 days = {'monday' : MondayLinks, 'tuesday' : TuesdayLinks, 'wednesday' : WednesdayLinks, 'thursday' : ThursdayLinks, 'friday' : FridayLinks}
 
