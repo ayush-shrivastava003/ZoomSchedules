@@ -3,6 +3,7 @@ import json
 import os
 import time
 import platform
+from window.py import Window
 
 import moduleinstaller
 from window import Window
