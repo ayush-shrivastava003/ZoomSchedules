@@ -19,8 +19,15 @@ class Window():
 
         root.mainloop()
 
-    #def entries(self):
 
 class Table():
     def __init__(self):
-        
+        links = []
+
+        link_entry = tk.Entry()
+        link_entry.bind('<Return>', self.input_link)
+        link_entry.pack()
+
+    def input_link(self, event):
+        links.append(link_entry.get())
+        link_entry.delete(0, 'end')
