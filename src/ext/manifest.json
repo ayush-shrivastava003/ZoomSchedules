@@ -1,0 +1,11 @@
+{
+    "name": "Zoom Scheduler",
+    "version": "0.90",
+    "manifest_version": 3,
+    "background": {
+        "service worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
