@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 :root {
     --accent-color: #2d8cff;
     --main-color: #f6f7f9;
@@ -11,6 +16,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--main-color);
+    animation: fadein 1.5s;
 }
 
 .accent-color {
