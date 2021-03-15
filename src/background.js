@@ -6,7 +6,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 
 // chrome.runtime.onMessage.addListener
 //for when a schedule is created in the popup
-var Name = "john smith"
+var Name = ""
 chrome.alarms.create(Name, {periodInMinutes:0.1, delayInMinutes: 0.001});
 chrome.alarms.onAlarm.addListener(async () => {
     console.log('Ten seconds have passed')
