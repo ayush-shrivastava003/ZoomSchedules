@@ -1,8 +1,8 @@
-chrome.runtime.onInstalled.addListener(async () => {
-    let url = chrome.runtime.getURL("welcome.html")
-    chrome.tabs.create({url});
-    console.log('opened new tab')
-});
+//chrome.runtime.onInstalled.addListener(async () => {
+//    let url = chrome.runtime.getURL("welcome.html")
+//    chrome.tabs.create({url});
+//    console.log('opened new tab')
+//});
 
 // chrome.runtime.onMessage.addListener
 //for when a schedule is created in the popup
