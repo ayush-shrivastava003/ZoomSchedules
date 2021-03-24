@@ -1,16 +1,13 @@
 class Schedule {
-    constructor() {
-    }
+    constructor() {}
 
     Every(interval, unit) {
         const call_every = new every(interval, unit);
         console.log('called "every"')
         return call_every;
     }
-    
-
 }
-
+    
 class Every {
     constructor(interval, unit) {
         this.interval = interval;
