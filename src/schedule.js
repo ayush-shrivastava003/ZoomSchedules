@@ -1,33 +1,13 @@
 class Schedule {
-    constructor() {
-<<<<<<< Updated upstream
-        this.queue = [];
-    }
-
-    addToQueue(event) {
-        this.queue.push(event);
-=======
-    }
+    constructor() {}
 
     Every(interval, unit) {
         const call_every = new every(interval, unit);
         console.log('called "every"')
         return call_every;
->>>>>>> Stashed changes
     }
 }
-
-<<<<<<< Updated upstream
-class Event {
-    constructor(day, time, action) {
-        this.day = day;
-        this.time = time;
-        this.action = action;
-    }
-}
-
-export {Schedule, Event};
-=======
+    
 class Every {
     constructor(interval, unit) {
         this.interval = interval;
@@ -103,4 +83,3 @@ class Time {
 var g = new Schedule();
 g.Every(1, 'second').At('08:45').Do('gaming');
 g.Every(1, 'hour').Do('gaming')
->>>>>>> Stashed changes
