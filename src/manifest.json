@@ -9,6 +9,7 @@
         "default_popup": "popup/home.html"
     },
     "permissions": [
-        "alarms"
+        "alarms",
+        "storage"
     ]
 }

@@ -23,8 +23,8 @@ class Every {
         return call_at;
     }
 
-    Do(action) {
-        console.log(`i did ${action} after a period of ${this.interval} ${this.unit}!!!!!!!!`)
+    Do(url) {
+        console.log(`i did ${url} after a period of ${this.interval} ${this.unit}!!!!!!!!`)
     }
 }
 
@@ -36,53 +36,8 @@ class At {
         this.unit = unit;
     }
 
-    Do(action) {
-        console.log(`i did ${action} after a period of ${this.interval} ${this.unit} at ${this.time}!!!!!!!!`)
+    Do(url) {
+        const t = Time();
+        t.new_task(this.time, url)
     }
 }
-
-class Time {
-    constructor(unit) {
-        //initialize unit time and action
-        this.tasks = [];
-        this.unit = unit;
-        //this.time = time;
-
-        //create units of time that can be used for the Date module but simplified for us
-        this.second = 1000*60;
-        this.minute = this.second*60;
-        this.hour = this.minute*60;
-        this.day = this.hour*24;
-        this.week = this.day*7;
-        this.month = this.day*30;
-        this.year = this.month*12;
-
-        //sleep function
-        const sleep = sleep
-        
-    }
-
-    new_task(action) {
-        const now = Date.now();
-        
-        if (this.unit = 'second') {
-            const exec_time = now + this.second;
-            this.tasks.push([exec_time, action]);
-            console.log(this.tasks);
-        }
-    }
-
-    run_pending() {
-        for (let x of this.tasks) {
-            const now = Date.now();
-
-            if (now = x[0]) {
-                console.log(`${x[1]} has been performed.`)
-            }
-        }
-    }
-}
-
-var g = new Schedule();
-g.Every(1, 'second').At('08:45').Do('gaming');
-g.Every(1, 'hour').Do('gaming')
