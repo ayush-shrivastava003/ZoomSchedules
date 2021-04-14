@@ -1,14 +1,20 @@
-class Schedule {
+import Time from './time.js'
+export class Schedule {
     constructor() {}
 
     Every(interval, unit) {
-        const call_every = new every(interval, unit);
+        const call_every = new Every(interval, unit);
         console.log('called "every"')
         return call_every;
     }
+
+    run_pending(){
+        const call_time = new Time();
+        call_time.run_pending();
+    }
 }
     
-class Every {
+export class Every {
     constructor(interval, unit) {
         this.interval = interval;
         console.log(this.interval + ' is the interval')
@@ -18,7 +24,7 @@ class Every {
     }
 
     At(time) {
-        const call_at = new at(time, this.interval, this.unit);
+        const call_at = new At(time, this.interval, this.unit);
         console.log('called "at"')
         return call_at;
     }
@@ -28,7 +34,7 @@ class Every {
     }
 }
 
-class At {
+export class At {
     constructor(time, interval, unit) {
         this.time = time;
         console.log(this.time + ' is the time')

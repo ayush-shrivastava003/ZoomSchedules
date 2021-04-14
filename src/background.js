@@ -1,7 +1,9 @@
-import {Schedule} from "./schedule";
+import { Schedule, Every, At } from "./schedule.js";
+import Time from "./time.js";
 
-class Main {
-    constructor() {
-        this.schedule = new Schedule();
-    }
-}
+const T = new Time();
+const S = new Schedule();
+const E = new Every();
+const A = new At();
+
+console.log('wassup')

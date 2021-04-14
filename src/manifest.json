@@ -3,10 +3,10 @@
     "version": "0.90",
     "manifest_version": 3,
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "./background.html"
     },
     "action": {
-        "default_popup": "popup/home.html"
+        "default_popup": "./popup/home.html"
     },
     "permissions": [
         "alarms",
