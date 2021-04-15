@@ -1,4 +1,6 @@
-export default class Time {
+console.log("hello from time.js")
+
+class Time {
     constructor() {
         this.tasks = [];
 

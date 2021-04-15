@@ -1,9 +1,4 @@
-import { Schedule, Every, At } from "./schedule.js";
-import Time from "./time.js";
+importScripts("/schedule.js")
 
-const T = new Time();
-const S = new Schedule();
-const E = new Every();
-const A = new At();
-
-console.log('wassup')
+const t = new Time();
+t.convert('15:00');
