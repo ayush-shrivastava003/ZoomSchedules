@@ -80,3 +80,10 @@ nav ul li a:hover {
 	color: var(--accent-color);
 	background-color: var(--main-color);
 }
+
+#test {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #ff000f;
+    position: relative;
+    bottom: -50px;
+}
