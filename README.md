@@ -9,10 +9,13 @@ Since the chrome extension isn't finished, we recommend that you instead install
 
 ## FAQ
 * Will the extension be available on other platforms?
+  
   For now ZoomSchedules will only be available for chrome or as a script application, but we will aim to have support for other browsers soon!
 * Which is better, the chrome extension or script application?
+  
   It'll generally be a better idea to install the chrome extension, since the script application uses more of your computers resources. It's still a great alternative if the extension has a problem, though!
 * There's a bug that's come up. How do I report it?
+  
   This extension will probably be full of bugs, so it is recommended that you fill out our bug report [here](https://forms.gle/tYEQjidhk7eeDfRP7). 
   
 ## Latest release
