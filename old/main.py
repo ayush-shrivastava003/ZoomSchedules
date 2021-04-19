@@ -5,7 +5,7 @@ import time
 
 import moduleinstaller
 
-from window import Window
+#from window import Window
 
 try:
     import schedule
@@ -31,7 +31,7 @@ def open_url(url):
     print(f'{time.asctime()}: Opened a new tab.')
 
 def make_schedule():
-    for Classes in range(data[0]["number of classes"]):
+    for Classes in range(NumberOfClasses):
         schedule.every().monday.at(days['monday'][Classes][1]).do(open_url, url = days['monday'][Classes][0])
         schedule.every().monday.at(days['tuesday'][Classes][1]).do(open_url, url = days['tuesday'][Classes][0])
         schedule.every().wednesday.at(days['wednesday'][Classes][1]).do(open_url, url = days['wednesday'][Classes][0])
@@ -90,7 +90,7 @@ if not char:
     print('Successfully scheduled everything!')
 
     #saves created schedule to json file
-    with open(path, 'w') as openedfile:
+    with open(file, 'w') as openedfile:
         info = {'schedule' : days, 'number of classes' : NumberOfClasses}
         json.dump(info, openedfile)
         openedfile.close()
@@ -100,7 +100,7 @@ else:
     print('You already have a schedule.')
 
     #copies previous schedule to dictionary
-    with open(path, 'r') as savedschedule:
+    with open(file, 'r') as savedschedule:
         data = []
         for line in savedschedule:
             data.append(json.loads(line))
