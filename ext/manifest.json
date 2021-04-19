@@ -1,6 +1,6 @@
 {
     "name": "Zoom Scheduler",
-    "version": "0.90",
+    "version": "0.10",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
