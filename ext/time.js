@@ -59,6 +59,9 @@ class Time {
         
         var midnight = today-todaysHours-todaysMinutes-todaysSeconds;
         var timeToExecute = midnight+convertedTime;
+        console.log(timeToExecute)
+        console.log(Now)
+        var timeToExecute = timeToExecute - Now;
         console.log(timeToExecute);
         
         return timeToExecute;

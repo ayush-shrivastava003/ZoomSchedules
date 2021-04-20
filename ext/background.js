@@ -15,3 +15,15 @@ chrome.runtime.onConnect.addListener(function(port) {
       console.log("sent converted time");
     });
   });
+
+chrome.runtime.onStartup(() => {
+  chrome.storage.sync.get(['chungus'], function(result) {
+    alert('Value currently is ' + result.chungus);
+  });
+})
+
+function getSchedule() {
+  chrome.storage.sync.get(['chungus'], function(result) {
+    alert('Value currently is ' + result.chungus);
+  });
+}
