@@ -27,6 +27,11 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
 nav {
 	width: 100%;
 	background-color: var(--accent-color);
