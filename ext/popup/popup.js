@@ -7,9 +7,11 @@ var port = chrome.runtime.connect({name: "popup"});
 console.log("connected from content");
 
 function post() {
-  port.postMessage({test: "hello from popup"});
-  console.log("posted content");
-}
+  var t = document.getElementById("textEntry").value;
+  if (t != '') {
+    port.postMessage({time: t});
+    console.log("posted content");
+}};
 
 port.onMessage.addListener(function (msg) {
   console.log("we got a time: " + msg.execTime);

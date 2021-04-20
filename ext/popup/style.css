@@ -93,6 +93,12 @@ nav ul li a:hover {
     color: #2d8cff;
 }
 
+#textEntry {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #2d8cff;
+    position: relative;
+    bottom: -60px;
+}
 .main-content {
     font-family: 'Noto Sans JP', sans-serif;
     color: #2d8cff;
