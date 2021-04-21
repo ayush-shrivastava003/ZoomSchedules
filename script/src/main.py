@@ -5,8 +5,6 @@ import time
 
 import moduleinstaller
 
-#from window import Window
-
 try:
     import schedule
     import selenium
@@ -16,15 +14,8 @@ except ImportError:
 no_classes = True
 NumberOfClasses = None
 path = None
-MondayLinks = []
-TuesdayLinks = []
-WednesdayLinks = []
-ThursdayLinks = []
-FridayLinks = []
 
-#window = Window()
-
-days = {'monday' : MondayLinks, 'tuesday' : TuesdayLinks, 'wednesday' : WednesdayLinks, 'thursday' : ThursdayLinks, 'friday' : FridayLinks}
+days = {'monday' : [], 'tuesday' : [], 'wednesday' : [], 'thursday' : [], 'friday' : []}
 
 def open_url(url):
     webbrowser.open_new_tab(url)
